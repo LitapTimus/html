@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9        # Example: specify runtime if needed
+    commands:
+      - echo Installing dependencies
+      - pip install -r requirements.txt  # Example: install Python dependencies
+
+  pre_build:
+    commands:
+      - echo Starting pre-build phase
+      - echo Logging in to Docker (if you need Docker auth)
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Running build commands here
+      # e.g. run tests, compile code, build docker image, etc.
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Post-build actions (upload artifacts, notify, etc.)
+
+artifacts:
+  files:
+    - '**/*'   # This means include all files in the output artifacts
